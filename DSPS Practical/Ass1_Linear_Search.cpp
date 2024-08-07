@@ -40,7 +40,7 @@ class linear
     
     void search()
     {
-        do{
+      do{  
         cout<<"\nEnter Key Element you want search:  ";
         cin>>key;
         for(i=0;i<size;i++)
@@ -50,7 +50,7 @@ class linear
                 pos=i;
                 break;
             }
-            
+         
         }
         for(i=0;i<size;i++)
         {
@@ -62,10 +62,10 @@ class linear
                 continue;
             }
         }
-        if(flag!=1)
+        if(flag=0)
         {
             cout<<"\n\t***************************************************************\n";
-            cout<<"\t____*****____*****____RESULT____*****____*****____\n";
+            cout<<"\t_____________________RESULT_______________________\n";
               cout<<"\n\t***********************************************************\n";
             cout<<"\nElement "<<key<<" is NOT Found " ;  
               cout<<"\n\t***********************************************************\n";
@@ -73,7 +73,7 @@ class linear
         else
         {
             cout<<"\n\t***************************************************************\n";
-            cout<<"\t\t____*****____*****____RESULT____*****____*****____\n";
+            cout<<"\t\t______________________RESULT______________________\n";
             cout<<"\n\t***************************************************************\n";
             cout<<"\t\t# Element "<<key<<" is FOUND\n";
             cout<<"\t\t# First Position of Element "<<key<<" is  : "<<pos;
@@ -84,11 +84,13 @@ class linear
         }
         cout<<"\n\nDo You want to search Again , Press 1 : ";
         cin>>press;
-        }while(press==1);
+    }while(press==1);
+        
     }
 };
 int main()
-{
+{ 
+    int press;
    linear p1;
    p1.sort();
    p1.search();
