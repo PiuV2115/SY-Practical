@@ -38,23 +38,46 @@ class linear
     void search()
     {
         do{
-        cout<<"\n\nEnter Key Element you want search:  ";
+        cout<<"\nEnter Key Element you want search:  ";
         cin>>key;
         for(i=0;i<size;i++)
         {
             if(key==a[i])
             {
-                flag=1;
+                pos=i;
                 break;
+            }
+            
+        }
+        for(i=0;i<size;i++)
+        {
+            if(key==a[i])
+            {
+                pos1=i;
+                count++;
+                flag=1;
+                continue;
             }
         }
         if(flag!=1)
         {
-         cout<<"\n\nElement "<<key<<" is NOT Found " ;   
+            cout<<"\n\t\t*************************************************\n";
+            cout<<"\t\t____*****____*****____RESULT____*****____*****____\n\n";
+              cout<<"\n\t\t*************************************************\n";
+            cout<<"\n\nElement "<<key<<" is NOT Found " ;  
+              cout<<"\n\t\t*************************************************\n";
         }
         else
         {
-            cout<<"\n\nElement "<<key<<" is Found at "<<i<<" Position" ; 
+            cout<<"\n\t\t*************************************************\n";
+            cout<<"\t\t____*****____*****____RESULT____*****____*****____\n\n";
+            cout<<"\n\t\t*************************************************\n";
+            cout<<"\t\t# Element "<<key<<" is FOUND\n";
+            cout<<"\t\t# First Position of Element "<<key<<" is  : \n"<<pos;
+             cout<<"\t\t# Last Position of Element "<<key<<" is : \n"<<pos1;
+              cout<<"\t\t# count of Element "<<key<<" is : \n"<<pos1;
+             cout<<"\n\t\t*************************************************\n";
+            
         }
         cout<<"\n\nDo You want to search Again , Press 1 : ";
         cin>>press;
