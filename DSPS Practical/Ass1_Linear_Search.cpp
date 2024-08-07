@@ -5,7 +5,7 @@ using namespace std;
 class linear
 {
     public:
-    int i,j,a[10],temp=0,flag=0,size,key,press;
+    int i,j,a[10],pos,pos1,count=0,temp=0,flag=0,size,key,press;
     
     void sort()
     {
@@ -28,11 +28,14 @@ class linear
                 }
             }
         }
-        cout<<"\nSorted Element are : ";
+        cout<<"\n\t***************************************************************\n";
+        cout<<"\t\tSORTED ELEMENTS : ";
+       
         for(i=0;i<size;i++)
         {
             cout<<""<<a[i]<<"\t";
         }
+         cout<<"\n\t***************************************************************\n";
     }
     
     void search()
@@ -61,22 +64,22 @@ class linear
         }
         if(flag!=1)
         {
-            cout<<"\n\t\t*************************************************\n";
-            cout<<"\t\t____*****____*****____RESULT____*****____*****____\n\n";
-              cout<<"\n\t\t*************************************************\n";
-            cout<<"\n\nElement "<<key<<" is NOT Found " ;  
-              cout<<"\n\t\t*************************************************\n";
+            cout<<"\n\t***************************************************************\n";
+            cout<<"\t____*****____*****____RESULT____*****____*****____\n";
+              cout<<"\n\t***********************************************************\n";
+            cout<<"\nElement "<<key<<" is NOT Found " ;  
+              cout<<"\n\t***********************************************************\n";
         }
         else
         {
-            cout<<"\n\t\t*************************************************\n";
-            cout<<"\t\t____*****____*****____RESULT____*****____*****____\n\n";
-            cout<<"\n\t\t*************************************************\n";
+            cout<<"\n\t***************************************************************\n";
+            cout<<"\t\t____*****____*****____RESULT____*****____*****____\n";
+            cout<<"\n\t***************************************************************\n";
             cout<<"\t\t# Element "<<key<<" is FOUND\n";
-            cout<<"\t\t# First Position of Element "<<key<<" is  : \n"<<pos;
-             cout<<"\t\t# Last Position of Element "<<key<<" is : \n"<<pos1;
-              cout<<"\t\t# count of Element "<<key<<" is : \n"<<pos1;
-             cout<<"\n\t\t*************************************************\n";
+            cout<<"\t\t# First Position of Element "<<key<<" is  : "<<pos;
+            cout<<"\n\t\t# Last Position of Element "<<key<<" is : "<<pos1;
+            cout<<"\n\t\t# count of Element "<<key<<" is : "<<count;
+            cout<<"\n\t***************************************************************\n";
             
         }
         cout<<"\n\nDo You want to search Again , Press 1 : ";
