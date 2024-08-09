@@ -8,22 +8,17 @@ public:
   string name;
   void Accept()
   {
-   cout<<"_Enter Books Name_ : ";
+   cout<<"_Book Name_ : ";
    cin>>name;
-   cout<<"_Enter books cost_: ";
+   cout<<"_Book cost_: ";
    cin>>cost;
    }
-   
-  
-   
-   
 };
 int main()
 {
 Book books[10];
-int i,size,choice;
-cout<<"_Enter Books size_: ";
-cin>>size;
+int i,size,n,choice,flag=0;
+int count=0;
 do{
 cout<<"1.Fill Books Details\n";
 cout<<"2.Sorting Books (By Cost)\n";
@@ -32,14 +27,18 @@ cout<<"4.count of Books Less Than 500\n";
 //cout<<"5.Deleteion Duplication (temporary array)\n";
 //cout<<"6.Deletion of Duplication (orignal array)\n"; 
 //cout<<"7.Display\n";
-cout<<"5.Exit\n"
+cout<<"5.Exit\n";
 cout<<"Enter Your Choice : ";
 cin>>choice;
-cout<<"\n\n";
+
 switch(choice)
 {
 case 1:
-cout<<"Enter Book Details";
+cout<<"\n_Enter Books size_: ";
+cin>>n;
+size+=n;
+cout<<"\n\n";
+cout<<"\t_#_Enter Book Details_#_\n";
 for(i=0;i<size;i++)
 { 
      books[i].Accept();
@@ -50,13 +49,14 @@ cout<<"\t************************************************************\n";
 cout<<"\t\t\t_NAMES_\t\t_COST_\n";
 for(i=0;i<size;i++)
 {
-cout<<"\t"<<books[i].name<<"\t\t"<<books[i].cost<<"\n";
+cout<<"\t\t\t "<<books[i].name<<"\t\t"<<books[i].cost<<"\n";
 }
 cout<<"\t************************************************************\n";
 break;
 
 
 case 2:
+cout<<"\n\n";
 for(i=1;i<size;i++)
 {
 for(int j=0;j<i;j++)
@@ -78,13 +78,13 @@ cout<<"\t************************************************************\n";
 cout<<"\t\t\t_NAMES_\t\t_COST_\n";
 for(i=0;i<size;i++)
 {
-cout<<"\t\t\t"<<books[i].name<<"\t\t"<<books[i].cost<<"\n";
+cout<<"\t\t\t "<<books[i].name<<"\t\t"<<books[i].cost<<"\n";
 }
 cout<<"\t************************************************************\n";
 break;
 
 case 3:
-int count=0;
+cout<<"\n\n";
 cout<<"\n\t************************************************************\n";
 cout<<"\t _____________________BOOKS LIST (>500)_____________________\n\n";
 cout<<"\n\t************************************************************\n";
@@ -93,25 +93,37 @@ for(i=0;i<size;i++)
 {
  if(books[i].cost>500)
  {
-cout<<"\t\t\t"<<books[i].name<<"\t\t"<<books[i].cost<<"\n";
+cout<<"\t\t\t "<<books[i].name<<"\t\t"<<books[i].cost<<"\n";
  }
 else
 {
+flag=1;
 count++;
 }
+}
+if(flag==1)
+{
+ if(count==size)
+ {
+ cout<<"\n\t\t  None of Book is Above 500 (>500)\n";
+ }
 }
 cout<<"\n\t************************************************************\n";
 break;
 
 case 4:
-cout<<"\nCount of Books (<=500) : "<<count<<"\n";
+cout<<"\n\n";
+cout<<"Count of Books (<=500) : "<<count<<"\n\n";
 break;
 
-case 5:exit(0);
+case 5:
+cout<<"\n\n";
+exit(0);
 break;
 
 default:cout<<"Wrong Choice\n";
 }
+
 }while(1);
 return 0;
 }
